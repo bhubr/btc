@@ -4,15 +4,27 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "NODE_ENV=test node node_modules/jasmine/bin/jasmine --config=jasmine.json test/**/*.spec.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bignumber.js": "^8.0.1",
+    "bluebird": "^3.5.3",
     "body-parser": "^1.18.3",
-    "ccxt": "^1.17.492",
+    "ccxt": "^1.17.586",
+    "ethereumjs-abi": "^0.6.5",
+    "ethereumjs-util": "^6.0.0",
     "express": "^4.16.4",
     "mysql": "^2.16.0",
-    "nodemon": "^1.18.7"
+    "nodemon": "^1.18.7",
+    "redis": "^2.8.0",
+    "web3": "^1.0.0-beta.36",
+    "winston-redis": "^1.0.0"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "jasmine": "^3.3.0",
+    "proxyquire": "^2.1.0"
   }
 }
