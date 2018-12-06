@@ -29,3 +29,18 @@ create table crypto(
   explorer VARCHAR(255),
   source_code VARCHAR(255)
 );
+
+create table history_ohlcv(
+  id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  symbol VARCHAR(10),
+  exchange_id INTEGER NULL,
+  exchange_ccxt_id VARCHAR(30),
+  timestamp INTEGER,
+  open DECIMAL(20, 8),
+  high DECIMAL(20, 8),
+  low DECIMAL(20, 8),
+  close DECIMAL(20, 8),
+  volume DECIMAL(20, 8),
+  base VARCHAR(5),
+  quote VARCHAR(5)
+);
