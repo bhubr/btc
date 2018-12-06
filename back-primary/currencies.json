@@ -1,0 +1,4 @@
+{
+  "crypto": ["BTC", "ETH", "XRP", "EOS", "XLM", "LTC", "USDT", "ADA", "XMR", "TRX"],
+  "fiat": ["EUR", "USD"]
+}

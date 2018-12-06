@@ -28,12 +28,7 @@ const performDbUpdate = (exchangesCcxt, exchangesDb) => {
   }));
 }
 
-const exchangesDbUpdate = exchangesCcxt => {
-  // const exchangesCcxt = exchangesCcxtGet();
-  // console.log(exchangesCcxt);
-  // console.log(exchangesCcxt.filter(e => typeof e.website !== 'string'))
-  return query('SELECT * from exchange')
-    .then(exchangesDb => performDbUpdate(exchangesCcxt, exchangesDb));
-}
+const exchangesDbUpdate = exchangesCcxt => query('SELECT * from exchange')
+  .then(exchangesDb => performDbUpdate(exchangesCcxt, exchangesDb));
 
 module.exports = exchangesDbUpdate;
