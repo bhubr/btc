@@ -35,7 +35,7 @@ create table history_ohlcv(
   symbol VARCHAR(10),
   exchange_id INTEGER NULL,
   exchange_ccxt_id VARCHAR(30),
-  timestamp INTEGER,
+  timestamp INTEGER(11),
   open DECIMAL(20, 8),
   high DECIMAL(20, 8),
   low DECIMAL(20, 8),
