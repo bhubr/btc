@@ -7,7 +7,15 @@ app.use(cors());
 
 setInterval(() => query('SELECT 1'), 60000);
 
-app.get('/ohlcv', (req, res) => query('select * from history_ohlcv')
+const fetchOHLCV = queryParams => {
+  const whereKeys = queryParams.from
+    ? ` WHERE timestamp >= ?` : '';
+  const whereValues = queryParams.from
+    ? [queryParams.from] : [];
+  return query(`select * from history_ohlcv${whereKeys}`, whereValues);
+};
+
+app.get('/ohlcv', (req, res) => fetchOHLCV(req.query)
   .then(records => res.json(records))
 );
 
